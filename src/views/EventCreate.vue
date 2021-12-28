@@ -5,9 +5,10 @@
     <h3 >{{ catLength }}</h3>
     <h4>{{ getEvent(1) }}</h4>
     <h5>{{ getEventById(1) }}</h5>
+
     <form @submit.prevent="createEvent">
       <label for="">Select a category</label>
-      <select name="" id="" class="">
+      <select v-model="event.category">
         <option v-for="cat in categories" :key="cat">{{ cat }}</option>
       </select>
 
@@ -19,7 +20,7 @@
 
       <div class="field">
         <label for="">Description</label>
-        <input v-model="event.Description" type="text" placeholder="Add a description">
+        <input v-model="event.description" type="text" placeholder="Add a description">
       </div>
 
       <h3>Where is your event?</h3>
